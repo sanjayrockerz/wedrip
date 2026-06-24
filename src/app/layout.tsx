@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { StickyNav } from "@/components/nav/StickyNav";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WeDrip — India's merch agency for creators.",
+  title: "WeDrip — India's merch agency for creators",
   description:
-    "We design it, build the store, handle production. You just show up.",
+    "India's merch agency for creators. We design it, build the store, handle production. You just show up.",
 };
 
 export default function RootLayout({
@@ -28,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <StickyNav />
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );
