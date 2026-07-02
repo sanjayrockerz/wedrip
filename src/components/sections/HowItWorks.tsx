@@ -107,22 +107,25 @@ export function HowItWorks() {
         const cards = sectionRef.current?.querySelectorAll("[data-step-card]");
         if (!cards) return;
 
-        const tween = gsap.from(cards, {
-          opacity: 0,
-          y: 24,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        });
+        const triggers = Array.from(cards).map((card) =>
+          gsap.from(card, {
+            opacity: 0,
+            x: -48,
+            duration: 0.7,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          })
+        );
 
         return () => {
-          tween.scrollTrigger?.kill();
-          tween.kill();
+          triggers.forEach((tween) => {
+            tween.scrollTrigger?.kill();
+            tween.kill();
+          });
         };
       });
 
@@ -144,14 +147,14 @@ export function HowItWorks() {
             How It Works
           </span>
           <div className="mt-6 flex items-baseline font-sans font-bold tracking-tight-display">
-            <span className="text-7xl text-brand-yellow">0</span>
+            <span className="text-5xl text-brand-yellow">0</span>
             <NumberTicker
               value={activeStepIndex + 1}
-              className="text-7xl text-brand-yellow"
+              className="text-5xl text-brand-yellow"
             />
-            <span className="text-7xl text-white/30">/04</span>
+            <span className="text-5xl text-white/30">/04</span>
           </div>
-          <p className="mt-4 text-2xl font-bold uppercase tracking-tight-display text-white">
+          <p className="mt-4 text-xl font-bold uppercase tracking-tight-display text-white">
             {STEPS[activeStepIndex].title}
           </p>
         </div>
@@ -168,10 +171,10 @@ export function HowItWorks() {
                 key={step.number}
                 data-step-card
                 className={cn(
-                  "transition-opacity lg:flex lg:min-h-[70vh] lg:flex-col lg:justify-center",
+                  "transition-all duration-500 ease-out lg:flex lg:min-h-[70vh] lg:flex-col lg:justify-center",
                   index === activeStepIndex
-                    ? "opacity-100"
-                    : "opacity-100 lg:opacity-30"
+                    ? "opacity-100 lg:translate-x-0 lg:scale-100"
+                    : "opacity-100 lg:translate-x-6 lg:scale-[0.97] lg:opacity-30"
                 )}
               >
                 {/* Mobile-only step indicator */}

@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { Marquee } from "@/components/ui/marquee";
 import { Magnetic } from "@/components/Magnetic";
+import { HeroCategoryCarousel } from "@/components/sections/HeroCategoryCarousel";
 import { useGSAP } from "@gsap/react";
 import { gsap, SplitText } from "@/lib/gsap";
 
@@ -128,6 +129,8 @@ export function Hero() {
             </Link>
           </Magnetic>
         </div>
+
+        <HeroCategoryCarousel />
       </div>
 
       <Marquee
