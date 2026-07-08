@@ -88,7 +88,7 @@ export function Hero() {
         height={20}
       />
 
-      <div className="hero-shell relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col items-center px-4 pb-8 pt-20 text-center sm:px-6 sm:pb-10 sm:pt-24 lg:px-8 lg:pb-4 lg:pt-16 xl:pt-[4.5rem]">
+      <div className="hero-shell relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col items-center justify-center px-4 pb-4 pt-[4rem] text-center sm:px-6 sm:pb-6 sm:pt-[5rem] lg:px-8 lg:pb-1 lg:pt-[2.75rem] xl:pt-[3.25rem]">
         <div className="flex flex-col items-center">
           <div
             ref={barRef}
@@ -97,15 +97,19 @@ export function Hero() {
 
           <h1
             ref={headlineRef}
-            className="max-w-[14ch] font-sans text-[clamp(2.55rem,8vw,4.25rem)] font-bold leading-[0.88] tracking-tight-display text-brand-black sm:text-[clamp(3.1rem,6vw,5rem)] lg:max-w-none lg:whitespace-nowrap lg:text-[clamp(2.8rem,4vw,4.8rem)] xl:text-[clamp(3.1rem,3.6vw,5.4rem)]"
+            className="w-full max-w-none normal-case font-sans text-[clamp(2.7rem,8.2vw,4.4rem)] font-bold leading-[0.88] tracking-tight-display text-brand-black sm:text-[clamp(3.25rem,6.1vw,5.15rem)] lg:text-[clamp(3.85rem,4.8vw,6.05rem)] xl:text-[clamp(4.2rem,4.1vw,6.75rem)]"
           >
-            <span className="block lg:inline">You built the audience.</span>
-            <span className="block lg:inline">We&apos;ll build the brand.</span>
+            <span className="block whitespace-nowrap normal-case">
+              You built the audience.
+            </span>
+            <span className="block whitespace-nowrap normal-case">
+              We&apos;ll build the brand.
+            </span>
           </h1>
 
           <p
             ref={sublineRef}
-            className="mt-5 max-w-[34rem] text-sm leading-relaxed text-brand-gray-text sm:mt-6 sm:text-base md:text-lg"
+            className="mt-4 max-w-[34rem] text-sm leading-relaxed text-brand-gray-text sm:mt-5 sm:text-base md:text-lg"
           >
             India&apos;s merch agency for creators. We design it, build the
             store, handle production. You just show up.
@@ -113,7 +117,7 @@ export function Hero() {
 
           <div
             ref={ctaRowRef}
-            className="mt-7 flex w-full flex-col items-stretch gap-3 sm:mt-8 sm:w-auto sm:flex-row sm:items-center sm:gap-4"
+            className="mt-5 flex w-full flex-col items-stretch gap-3 sm:mt-6 sm:w-auto sm:flex-row sm:items-center sm:gap-4"
           >
             <Magnetic>
               <Link
@@ -135,7 +139,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="hero-carousel-shell mt-7 w-full sm:mt-8 lg:mt-5">
+        <div className="hero-carousel-shell mt-6 w-full sm:mt-7 lg:mt-6">
           <HeroCategoryCarousel />
         </div>
       </div>
